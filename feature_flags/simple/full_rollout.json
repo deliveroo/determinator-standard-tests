@@ -1,0 +1,13 @@
+{
+  "name": "simple_full_rollout",
+  "identifier": "simple_full_rollout",
+  "bucket_type": "guid",
+  "target_groups": [
+    {
+      "rollout": 65536,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}

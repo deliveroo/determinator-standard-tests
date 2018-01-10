@@ -1,0 +1,28 @@
+[
+  {
+    "why": "When a feature flag is fully rolled out determinator should return true for any guid.",
+    "feature": "feature_flags/simple/full_rollout.json",
+    "id": null,
+    "guid": "abc",
+    "properties": {},
+    "returns": true
+  },
+  {
+    "why": "Feature flags with a bucket type of guid require a guid parameter.",
+    "feature": "feature_flags/simple/full_rollout.json",
+    "id": null,
+    "guid": null,
+    "properties": {},
+    "error": true
+  },
+  {
+    "why": "Only properties matching with the list of constraints in target groups are relevant.",
+    "feature": "feature_flags/simple/full_rollout.json",
+    "id": null,
+    "guid": "abc",
+    "properties": {
+      "someProperty": ["someValue"]
+    },
+    "returns": true
+  }
+]
