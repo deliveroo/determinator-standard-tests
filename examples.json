@@ -1,28 +1,80 @@
 [
   {
-    "why": "When a feature flag is fully rolled out determinator should return true for any guid.",
-    "feature": "feature_flags/simple/full_rollout.json",
+    "why": "GUID bucketed, full rollout features should be on for any GUID",
+    "feature": "feature_flags/simple/full_rollout_guid.json",
     "id": null,
     "guid": "abc",
     "properties": {},
     "returns": true
-  },
-  {
-    "why": "Feature flags with a bucket type of guid require a guid parameter.",
-    "feature": "feature_flags/simple/full_rollout.json",
+  },{
+    "why": "GUID bucketed, full rollout features should fail when no GUID given",
+    "feature": "feature_flags/simple/full_rollout_guid.json",
+    "id": "123",
+    "guid": null,
+    "properties": {},
+    "error": true
+  },{
+    "why": "ID bucketed, full rollout features should be on for any ID",
+    "feature": "feature_flags/simple/full_rollout_id.json",
+    "id": "123",
+    "guid": null,
+    "properties": {},
+    "returns": true
+  },{
+    "why": "ID bucketed, full rollout features should be off when no ID given",
+    "feature": "feature_flags/simple/full_rollout_id.json",
+    "id": null,
+    "guid": "123",
+    "properties": {},
+    "returns": false
+  },{
+    "why": "Fallback bucketed, full rollout features should be on for any ID",
+    "feature": "feature_flags/simple/full_rollout_fallback.json",
+    "id": "123",
+    "guid": null,
+    "properties": {},
+    "returns": true
+  },{
+    "why": "Fallback bucketed, full rollout features should be on for any GUID",
+    "feature": "feature_flags/simple/full_rollout_fallback.json",
+    "id": "123",
+    "guid": null,
+    "properties": {},
+    "returns": true
+  },{
+    "why": "Fallback bucketed, full rollout features should fail when no ID or GUID given",
+    "feature": "feature_flags/simple/full_rollout_fallback.json",
     "id": null,
     "guid": null,
     "properties": {},
     "error": true
-  },
-  {
-    "why": "Only properties matching with the list of constraints in target groups are relevant.",
-    "feature": "feature_flags/simple/full_rollout.json",
-    "id": null,
+  },{
+    "why": "Single bucketed, full rollout features should be on for any ID or GUID",
+    "feature": "feature_flags/simple/full_rollout_single.json",
+    "id": "123",
     "guid": "abc",
-    "properties": {
-      "someProperty": ["someValue"]
-    },
+    "properties": {},
     "returns": true
+  },{
+    "why": "Single bucketed, zero rollout features should be off for any ID or GUID",
+    "feature": "feature_flags/simple/zero_rollout_single.json",
+    "id": "123",
+    "guid": "abc",
+    "properties": {},
+    "returns": false
+  },{
+    "why": "Single bucketed, full rollout features should be on when no ID or GUID given",
+    "feature": "feature_flags/simple/full_rollout_single.json",
+    "id": null,
+    "guid": null,
+    "properties": {},
+    "returns": true
+  },{
+    "why": "Single bucketed, zero rollout features should be off when no ID or GUID given",
+    "feature": "feature_flags/simple/zero_rollout_single.json",
+    "id": null,
+    "guid": null,
+    "properties": {},
+    "returns": false
   }
 ]

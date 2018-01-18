@@ -1,0 +1,8 @@
+{
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "target_groups": [],
+  "active": true,
+  "overrides": {}
+}

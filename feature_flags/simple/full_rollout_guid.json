@@ -1,6 +1,6 @@
 {
-  "name": "simple_full_rollout",
-  "identifier": "simple_full_rollout",
+  "name": "feature_1",
+  "identifier": "feature_1",
   "bucket_type": "guid",
   "target_groups": [
     {

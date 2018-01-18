@@ -26,9 +26,9 @@ This example shows a single test case:
       "that": ["should", "be", "passed"],
       "into": ["the", "determinator", "function"]
     },
-    // absence of the following key is equivalent to "error": false
+    /* absence of the following key is equivalent to "error": false */
     "error": true,
-    // This key will be absent if "error": true
+    /* This key will be absent if "error": true */
     "returns": "the expected result of the determination"
   }
 ]

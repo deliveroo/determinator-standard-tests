@@ -1,0 +1,13 @@
+{
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "single",
+  "target_groups": [
+    {
+      "rollout": 65536,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}
