@@ -152,7 +152,7 @@
         "id": null,
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
-        "returns": true
+        "returns": false
       }
     ]
   }
