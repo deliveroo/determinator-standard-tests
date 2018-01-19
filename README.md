@@ -17,19 +17,24 @@ This example shows a single test case:
 ```json
 [
   {
-    "why": "A full-sentence explanation of why these arguments result in the specified response.",
-    "feature": "path/to/a/feature/definition.json",
-    "id": "the id parameter should be set to this value",
-    "guid": "the guid parameter should be set to this value",
-    "properties": {
-      "these": ["are", "the", "properties"],
-      "that": ["should", "be", "passed"],
-      "into": ["the", "determinator", "function"]
-    },
-    /* absence of the following key is equivalent to "error": false */
-    "error": true,
-    /* This key will be absent if "error": true */
-    "returns": "the expected result of the determination"
+    "section": "A description of this section of tests",
+    "examples": [
+      {
+        "why": "A full-sentence explanation of why these arguments result in the specified response.",
+        "feature": "path/to/a/feature/definition.json",
+        "id": "the id parameter should be set to this value",
+        "guid": "the guid parameter should be set to this value",
+        "properties": {
+          "these": ["are", "the", "properties"],
+          "that": ["should", "be", "passed"],
+          "into": ["the", "determinator", "function"]
+        },
+        /* absence of the following key is equivalent to "error": false */
+        "error": true,
+        /* This key will be absent if "error": true */
+        "returns": "the expected result of the determination"
+      }
+    ]
   }
 ]
 ```
