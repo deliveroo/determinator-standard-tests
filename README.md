@@ -39,6 +39,16 @@ This example shows a single test case:
 ]
 ```
 
+## IDs and GUIDs used
+
+Throughout the examples certain IDs and GUIDs are used to ensure specific functionality. They are picked because of the specific internal properties they exhibit within Determinator. For a features with the given `identifier` the following GUIDs and IDs will have the given rollout values, making them useful for testing specific outcomes:
+
+| Rollout value    | `identifier` | ID    | GUID                                 |
+|------------------|--------------|-------|--------------------------------------|
+| 0x0000 (minimum) | `feature_1`  | 54888 | d641e1bb-652c-4bb1-a54f-e18b6c1a9746 |
+| 0x8000           | `feature_1`  | 31467 | 65464efc-9230-4ce7-bb12-ea3e01385bcd |
+| 0xffff (maximum) | `feature_1`  | 10321 | 5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8 |
+
 ## Usage
 
 In your determinator library you can add this repo as a submodule in an appropriate directory, then iterate through the items in the object array in `examples.json` and execute one test for each, potentially printing out the `why` if the test fails.

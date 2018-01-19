@@ -3,7 +3,7 @@
   "bucket_type": "guid",
   "target_groups": [
     {
-      "rollout": 65536,
+      "rollout": 1,
       "constraints": {}
     }
   ],

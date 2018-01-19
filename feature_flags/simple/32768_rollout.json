@@ -1,7 +1,7 @@
 {
   "name": "feature_1",
   "identifier": "feature_1",
-  "bucket_type": "guid",
+  "bucket_type": "fallback",
   "target_groups": [
     {
       "rollout": 32768,

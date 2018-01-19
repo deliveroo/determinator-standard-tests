@@ -6,13 +6,13 @@
         "why": "GUID bucketed, full rollout features should be on for any GUID",
         "feature": "feature_flags/simple/full_rollout_guid.json",
         "id": null,
-        "guid": "abc",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
         "returns": true
       },{
         "why": "GUID bucketed, full rollout features should fail when no GUID given",
         "feature": "feature_flags/simple/full_rollout_guid.json",
-        "id": "123",
+        "id": "whatever",
         "guid": null,
         "properties": {},
         "error": true
@@ -24,7 +24,7 @@
       {
         "why": "ID bucketed, full rollout features should be on for any ID",
         "feature": "feature_flags/simple/full_rollout_id.json",
-        "id": "123",
+        "id": "10321",
         "guid": null,
         "properties": {},
         "returns": true
@@ -32,7 +32,7 @@
         "why": "ID bucketed, full rollout features should be off when no ID given",
         "feature": "feature_flags/simple/full_rollout_id.json",
         "id": null,
-        "guid": "123",
+        "guid": "whatever",
         "properties": {},
         "returns": false
       }
@@ -43,14 +43,14 @@
       {
         "why": "Fallback bucketed, full rollout features should be on for any ID",
         "feature": "feature_flags/simple/full_rollout_fallback.json",
-        "id": "123",
+        "id": "10321",
         "guid": null,
         "properties": {},
         "returns": true
       },{
         "why": "Fallback bucketed, full rollout features should be on for any GUID",
         "feature": "feature_flags/simple/full_rollout_fallback.json",
-        "id": "123",
+        "id": "54888",
         "guid": null,
         "properties": {},
         "returns": true
@@ -69,15 +69,15 @@
       {
         "why": "Single bucketed, full rollout features should be on for any ID or GUID",
         "feature": "feature_flags/simple/full_rollout_single.json",
-        "id": "123",
-        "guid": "abc",
+        "id": "10321",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
         "returns": true
       },{
         "why": "Single bucketed, zero rollout features should be off for any ID or GUID",
         "feature": "feature_flags/simple/zero_rollout_single.json",
-        "id": "123",
-        "guid": "abc",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {},
         "returns": false
       },{
@@ -94,6 +94,65 @@
         "guid": null,
         "properties": {},
         "returns": false
+      }
+    ]
+  },{
+    "section": "Basic determination functionality",
+    "examples": [
+      {
+        "why": "Each GUID has a rollout which just excludes it",
+        "feature": "feature_flags/simple/32768_rollout.json",
+        "id": null,
+        "guid": "65464efc-9230-4ce7-bb12-ea3e01385bcd",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "Each GUID has a rollout which just includes it",
+        "feature": "feature_flags/simple/32769_rollout.json",
+        "id": null,
+        "guid": "65464efc-9230-4ce7-bb12-ea3e01385bcd",
+        "properties": {},
+        "returns": true
+      },{
+        "why": "Each ID has a rollout which just excludes it",
+        "feature": "feature_flags/simple/32768_rollout.json",
+        "id": "31467",
+        "guid": null,
+        "properties": {},
+        "returns": false
+      },{
+        "why": "Each ID has a rollout which just includes it",
+        "feature": "feature_flags/simple/32769_rollout.json",
+        "id": "31467",
+        "guid": null,
+        "properties": {},
+        "returns": true
+      }
+    ]
+  },{
+    "section": "Malformed features",
+    "examples": [
+      {
+        "why": "Features missing 'active' are assumed to be inactive",
+        "feature": "feature_flags/malformed/missing_active.json",
+        "id": null,
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "Features missing an 'identifier' should use the 'name' as the identifier",
+        "feature": "feature_flags/malformed/missing_identifier.json",
+        "id": null,
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {},
+        "returns": true
+      },{
+        "why": "Features without any target groups will always be off",
+        "feature": "feature_flags/malformed/no_target_group.json",
+        "id": null,
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": true
       }
     ]
   }
