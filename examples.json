@@ -35,6 +35,13 @@
         "guid": "whatever",
         "properties": {},
         "returns": false
+      },{
+        "why": "IDs can be integers as well as strings",
+        "feature": "feature_flags/simple/full_rollout_id.json",
+        "id": 10321,
+        "guid": null,
+        "properties": {},
+        "returns": true
       }
     ]
   },{
@@ -130,26 +137,81 @@
       }
     ]
   },{
+    "section": "Target group functionality",
+    "examples": [
+    {
+        "why": "A feature is rolled out if a target group's contraints are met by the given properties",
+        "feature": "feature_flags/target_groups/high_low_spread_constraints.json",
+        "id": "10321",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {
+            "group_a": true
+        },
+        "returns": true
+      },{
+        "why": "A feature is not rolled out to the extent specified by a target group whose contraints are not met by the given properties",
+        "feature": "feature_flags/target_groups/high_low_spread_constraints.json",
+        "id": "10321",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {
+            "group_b": true
+        },
+        "returns": false
+      },{
+        "why": "When the actor's properties match two taget groups, the feature is on when their indicator includes them in either rollout",
+        "feature": "feature_flags/target_groups/high_low_spread_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "group_a": true,
+            "group_b": true
+        },
+        "returns": true
+      }
+    ]
+  },{
     "section": "Malformed features",
     "examples": [
       {
         "why": "Features missing 'active' are assumed to be inactive",
         "feature": "feature_flags/malformed/missing_active.json",
-        "id": null,
+        "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
         "returns": false
       },{
-        "why": "Features missing an 'identifier' should use the 'name' as the identifier",
+        "why": "Features missing an 'identifier' use the 'name' as the identifier",
         "feature": "feature_flags/malformed/missing_identifier.json",
         "id": null,
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {},
         "returns": true
       },{
-        "why": "Features without any target groups will always be off",
+        "why": "Features without any target groups are always off",
         "feature": "feature_flags/malformed/no_target_group.json",
-        "id": null,
+        "id": "10321",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "Features with an unknown bucket type should be off, but raise an error",
+        "feature": "feature_flags/malformed/invalid_bucket_type.json",
+        "id": "10321",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false,
+        "error": true
+      },{
+        "why": "Target groups with invalid rollouts are ignored",
+        "feature": "feature_flags/malformed/invalid_rollout.json",
+        "id": "10321",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "Features with invalid target group constraints are always off",
+        "feature": "feature_flags/malformed/invalid_target_group_constraints.json",
+        "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
         "returns": false
@@ -157,4 +219,3 @@
     ]
   }
 ]
-

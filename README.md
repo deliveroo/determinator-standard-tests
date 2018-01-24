@@ -29,15 +29,21 @@ This example shows a single test case:
           "that": ["should", "be", "passed"],
           "into": ["the", "determinator", "function"]
         },
-        /* absence of the following key is equivalent to "error": false */
         "error": true,
-        /* This key will be absent if "error": true */
         "returns": "the expected result of the determination"
       }
     ]
   }
 ]
 ```
+
+NB. `returns` and `error` are present and absent for different tests, the table below explains the expected behaviour:
+
+| `returns` | `error`         | expected behaviour                                               |
+|-----------|-----------------|------------------------------------------------------------------|
+| present   | true            | Something temporary is wrong (usually feature data is malformed) |
+| absent    | true            | Something unfixable is wrong (usually arguments in your code)    |
+| present   | absent (false)  | it worked! The output should be equal to the value of `returns`  |
 
 ## IDs and GUIDs used
 
