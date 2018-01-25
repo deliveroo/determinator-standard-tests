@@ -209,12 +209,12 @@
         "properties": {},
         "returns": false
       },{
-        "why": "Features with invalid target group constraints are always off",
+        "why": "Target groups with invalid constraints are ignored",
         "feature": "feature_flags/malformed/invalid_target_group_constraints.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
-        "returns": false
+        "returns": true
       }
     ]
   }
