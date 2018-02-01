@@ -38,7 +38,7 @@
       },{
         "why": "IDs can be integers as well as strings",
         "feature": "feature_flags/simple/full_rollout_id.json",
-        "id": 10321,
+        "id": "10321",
         "guid": null,
         "properties": {},
         "returns": true
@@ -145,7 +145,7 @@
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {
-            "group_a": true
+            "group_a": ["true"]
         },
         "returns": true
       },{
@@ -154,7 +154,7 @@
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {
-            "group_b": true
+            "group_b": ["true"]
         },
         "returns": false
       },{
@@ -163,8 +163,8 @@
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {
-            "group_a": true,
-            "group_b": true
+            "group_a": ["true"],
+            "group_b": ["true"]
         },
         "returns": true
       }
@@ -194,27 +194,26 @@
         "properties": {},
         "returns": false
       },{
-        "why": "Features with an unknown bucket type should be off, but raise an error",
+        "why": "Features with an unknown bucket type raise an error",
         "feature": "feature_flags/malformed/invalid_bucket_type.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
-        "returns": false,
         "error": true
       },{
-        "why": "Target groups with invalid rollouts are ignored",
+        "why": "Features with Target groups with invalid rollouts raise an error",
         "feature": "feature_flags/malformed/invalid_rollout.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
-        "returns": false
+        "error": true
       },{
-        "why": "Target groups with invalid constraints are ignored",
+        "why": "Features with Target groups with invalid constraints raise an error",
         "feature": "feature_flags/malformed/invalid_target_group_constraints.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
-        "returns": true
+        "error": true
       }
     ]
   }

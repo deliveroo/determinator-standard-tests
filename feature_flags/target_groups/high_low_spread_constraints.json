@@ -6,12 +6,12 @@
     {
       "rollout": 65536,
       "constraints": {
-        "group_a": true
+        "group_a": ["true"]
       }
     },{
       "rollout": 1,
       "constraints":  {
-        "group_b": true
+        "group_b": ["true"]
       }
     }
   ],
