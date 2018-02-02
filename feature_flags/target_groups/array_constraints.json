@@ -1,0 +1,15 @@
+{
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "target_groups": [
+    {
+      "rollout": 65536,
+      "constraints": {
+        "attribute": ["a", "b", "c"]
+      }
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "target_groups": [
+    {
+      "rollout": 32768,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "variants": {
+    "a": 1,
+    "b": 1
+  },
+  "overrides": {
+    "65": "a",
+    "66": "b",
+    "0": false
+  }
+}

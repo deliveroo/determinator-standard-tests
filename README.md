@@ -55,6 +55,10 @@ Throughout the examples certain IDs and GUIDs are used to ensure specific functi
 | 0x8000           | `feature_1`  | 31467 | 65464efc-9230-4ce7-bb12-ea3e01385bcd |
 | 0xffff (maximum) | `feature_1`  | 10321 | 5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8 |
 
+| Variant value            | `identifier` | ID     | GUID                                 |
+| 0x7ffe (just under half) | `feature_1`  | 42113  | 5a5585fb-ac14-4566-b41f-fa6f4531fcdc |
+| 0x7fff (just over half)  | `feature_1`  | 280238 | b61ca515-a9a8-453d-b84d-ca23d325f784 |
+
 ## Usage
 
 In your determinator library you can add this repo as a submodule in an appropriate directory, then iterate through the items in the object array in `examples.json` and execute one test for each, potentially printing out the `why` if the test fails.

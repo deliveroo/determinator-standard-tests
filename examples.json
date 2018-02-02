@@ -19,6 +19,39 @@
       }
     ]
   },{
+    "section": "GUID bucketing experiment functionality",
+    "examples": [
+      {
+        "why": "This experiment results in variant 'a' for this GUID",
+        "feature": "experiments/a_b_guid.json",
+        "id": null,
+        "guid": "5a5585fb-ac14-4566-b41f-fa6f4531fcdc",
+        "properties": {},
+        "returns": "a"
+      },{
+        "why": "This experiment results in variant 'b' for this GUID",
+        "feature": "experiments/a_b_guid.json",
+        "id": null,
+        "guid": "b61ca515-a9a8-453d-b84d-ca23d325f784",
+        "properties": {},
+        "returns": "b"
+      },{
+        "why": "The rollout of this experiment means this GUID is excluded",
+        "feature": "experiments/off_guid.json",
+        "id": null,
+        "guid": "5a5585fb-ac14-4566-b41f-fa6f4531fcdc",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "Variants are ordered alphanumerically before the correct one is picked",
+        "feature": "experiments/b_a_guid.json",
+        "id": null,
+        "guid": "5a5585fb-ac14-4566-b41f-fa6f4531fcdc",
+        "properties": {},
+        "returns": "a"
+      }
+    ]
+  },{
     "section": "Basic ID bucketing functionality",
     "examples": [
       {
@@ -42,6 +75,32 @@
         "guid": null,
         "properties": {},
         "returns": true
+      }
+    ]
+  },{
+    "section": "GUID bucketing experiment functionality",
+    "examples": [
+      {
+        "why": "This experiment results in variant 'a' for this GUID",
+        "feature": "experiments/a_b_id.json",
+        "id": "42113",
+        "guid": null,
+        "properties": {},
+        "returns": "a"
+      },{
+        "why": "This experiment results in variant 'b' for this GUID",
+        "feature": "experiments/a_b_id.json",
+        "id": "280238",
+        "guid": null,
+        "properties": {},
+        "returns": "b"
+      },{
+        "why": "The rollout of this experiment means this GUID is excluded",
+        "feature": "experiments/off_id.json",
+        "id": "42113",
+        "guid": null,
+        "properties": {},
+        "returns": false
       }
     ]
   },{
@@ -158,7 +217,7 @@
         },
         "returns": false
       },{
-        "why": "When the actor's properties match two taget groups, the feature is on when their indicator includes them in either rollout",
+        "why": "When the actor's properties match two target groups, the feature is on when their indicator includes them in either rollout",
         "feature": "feature_flags/target_groups/high_low_spread_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -167,6 +226,82 @@
             "group_b": true
         },
         "returns": true
+      },{
+        "why": "When the actor's property exists within the target group constraints array the feature is on",
+        "feature": "feature_flags/target_groups/array_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "attribute": "a"
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property does not exist within the target group constraints array the feature is off",
+        "feature": "feature_flags/target_groups/array_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "attribute": "d"
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array overlaps with the target group constraints array the feature is on",
+        "feature": "feature_flags/target_groups/array_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "attribute": ["c", "d"]
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property array does not overlap with the target group constraints array the feature is on",
+        "feature": "feature_flags/target_groups/array_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "attribute": ["d", "e"]
+        },
+        "returns": false
+      }
+    ]
+  },{
+    "section": "Override functionality",
+    "examples": [
+      {
+        "why": "A feature flag that should be off can be overridden to be on for specific IDs",
+        "feature": "feature_flags/overridden.json",
+        "id": "1",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {},
+        "returns": true
+      },{
+        "why": "A feature flag that should be on can be overridden to be off for specific IDs",
+        "feature": "feature_flags/overridden.json",
+        "id": "0",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "An experiment that should be on can be overridden to be off for specific IDs",
+        "feature": "experiments/overridden.json",
+        "id": "0",
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false
+      },{
+        "why": "An experiment that should be off can be overridden to be in a specific variant for specific IDs",
+        "feature": "experiments/overridden.json",
+        "id": "65",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {},
+        "returns": "a"
+      },{
+        "why": "An inactive feature flag cannot be overridden",
+        "feature": "feature_flags/inactive_overridden.json",
+        "id": "1",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {},
+        "returns": false
       }
     ]
   },{
