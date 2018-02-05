@@ -43,6 +43,20 @@
         "properties": {},
         "returns": false
       },{
+        "why": "When a winning variant is specified, all actors that are rolled out to will see that variant",
+        "feature": "experiments/a_b_guid_with_winner.json",
+        "id": null,
+        "guid": "5a5585fb-ac14-4566-b41f-fa6f4531fcdc",
+        "properties": {},
+        "returns": "b"
+      },{
+        "why": "When a winning variant is specified, all actors that are not rolled out to will still not be in the experiment",
+        "feature": "experiments/a_b_guid_with_winner.json",
+        "id": null,
+        "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+        "properties": {},
+        "returns": false
+      },{
         "why": "Variants are ordered alphanumerically before the correct one is picked",
         "feature": "experiments/b_a_guid.json",
         "id": null,
