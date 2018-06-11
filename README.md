@@ -69,6 +69,10 @@ $ git submodule add https://github.com/deliveroo/determinator-standard-tests spe
 
 If all of these tests pass then the core determination of the library is compatible with Florence and the other Determinator libraries.
 
+## Exceptions
+
+There is one test which you may want to implement manually. For single bucketed features at rollouts that are not 100% or 0% the outcome of the flag should be _random_. The `half_rollout_single` feature has been set up to return `true` or `false` outcomes half of the time, but the uncustomary lack of determination means this test can't easily be implemented as a black box.
+
 ## Updating
 
 It's likely that new test cases will need to be added to this repository as Florence grows. Updating this git submodule will ensure you have the latest version of the tests which should be run.
