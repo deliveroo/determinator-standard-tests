@@ -1,9 +1,9 @@
 {
-  "id": "feature_1",
+  "id": "feature_flags/malformed/missing_identifier.json",
   "bucket_type": "guid",
   "target_groups": [
     {
-      "rollout": 1,
+      "rollout": 62000,
       "constraints": {}
     }
   ],

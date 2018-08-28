@@ -334,7 +334,7 @@
         "id": null,
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {},
-        "returns": true
+        "returns": false
       },{
         "why": "Features without any target groups are always off",
         "feature": "feature_flags/malformed/no_target_group.json",
