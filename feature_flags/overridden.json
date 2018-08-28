@@ -1,4 +1,5 @@
 {
+  "id": "feature_flags/overridden.json",
   "name": "feature_1",
   "identifier": "feature_1",
   "bucket_type": "guid",

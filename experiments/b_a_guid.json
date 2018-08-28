@@ -1,4 +1,5 @@
 {
+  "id": "experiments/b_a_guid.json",
   "name": "feature_1",
   "identifier": "feature_1",
   "bucket_type": "guid",

@@ -1,4 +1,5 @@
 {
+  "id": "feature_flags/simple/32768_rollout.json",
   "name": "feature_1",
   "identifier": "feature_1",
   "bucket_type": "fallback",
