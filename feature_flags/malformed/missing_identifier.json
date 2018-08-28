@@ -1,5 +1,5 @@
 {
-  "id": "feature_flags/malformed/missing_identifier.json",
+  "id": "feature_1",
   "bucket_type": "guid",
   "target_groups": [
     {
