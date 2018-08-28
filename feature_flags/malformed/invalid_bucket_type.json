@@ -1,5 +1,5 @@
 {
-  "id": "feature_1",
+  "id": "feature_flags/malformed/invalid_bucket_type.json",
   "name": "feature_1",
   "identifier": "feature_1",
   "bucket_type": "invalid",

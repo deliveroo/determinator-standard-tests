@@ -1,5 +1,5 @@
 {
-  "name": "feature_1",
+  "name": "feature_flags/simple/half_rollout_single.json",
   "identifier": "feature_1",
   "bucket_type": "single",
   "target_groups": [
