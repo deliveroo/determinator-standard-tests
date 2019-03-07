@@ -92,7 +92,7 @@
       }
     ]
   },{
-    "section": "GUID bucketing experiment functionality",
+    "section": "ID bucketing experiment functionality",
     "examples": [
       {
         "why": "This experiment results in variant 'a' for this GUID",
