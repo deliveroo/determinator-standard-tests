@@ -268,12 +268,30 @@
         },
         "returns": true
       },{
-        "why": "When the actor's property array does not overlap with the target group constraints array the feature is on",
+        "why": "When the actor's property array does not overlap with the target group constraints array the feature is off",
         "feature": "feature_flags/target_groups/array_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {
             "attribute": ["d", "e"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array overlaps with the target group containing an app_version the feature is on",
+        "feature": "feature_flags/target_groups/app_version_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "app_version": ["2.3.0", "0.4.0", "1.3.0"]
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property array does not overlap with the target group containing an app_version the feature is off",
+        "feature": "feature_flags/target_groups/app_version_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "app_version": ["0.2.0"]
         },
         "returns": false
       }
@@ -356,6 +374,15 @@
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
+        "returns": false
+      },{
+        "why": "Target groups with malformed app_version are ignored",
+        "feature": "feature_flags/malformed/malformed_app_version.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "app_version": ["1.3.0"]
+        },
         "returns": false
       }
     ]
