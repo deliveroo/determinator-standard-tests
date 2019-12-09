@@ -294,6 +294,16 @@
             "app_version": ["0.2.0"]
         },
         "returns": false
+      },{
+        "why": "When the actor's property array matches all the contraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "attribute_1": ["b"],
+            "attribute_2": ["x"]
+        },
+        "returns": true
       }
     ]
   },{
