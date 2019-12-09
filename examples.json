@@ -295,13 +295,42 @@
         },
         "returns": false
       },{
-        "why": "When the actor's property array matches all the contraints in a target group",
+        "why": "When the actor's property array matches all the constraints in a target group",
         "feature": "feature_flags/target_groups/multiple_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {
             "attribute_1": ["b"],
             "attribute_2": ["x"]
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property array partially matches the constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "attribute_1": ["c"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array partially matches the second set of constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "attribute_2": ["x"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array has additional properties but matches all the constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "attribute_1": ["b"],
+          "attribute_2": ["x"],
+          "attribute_3": ["q"]
         },
         "returns": true
       }
