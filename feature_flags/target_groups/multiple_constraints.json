@@ -1,0 +1,17 @@
+{
+  "id": "feature_flags/target_groups/multiple_constraints.json",
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "target_groups": [
+    {
+      "rollout": 65536,
+      "constraints": {
+        "attribute_1": ["a", "b", "c"],
+        "attribute_2": ["x"]
+      }
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}
