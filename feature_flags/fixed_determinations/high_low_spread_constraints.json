@@ -1,0 +1,27 @@
+{
+  "id": "feature_flags/fixed_determinations/high_low_spread_constraints.json",
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "fixed_determinations": [
+    {
+      "on": true,
+      "constraints": {
+        "group_a": true
+      }
+    },{
+      "on": false,
+      "constraints":  {
+        "group_b": true
+      }
+    }
+  ],
+  "target_groups": [
+    {
+      "rollout": 65535,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}

@@ -1,0 +1,22 @@
+{
+  "id": "feature_flags/fixed_determinations/feature_switched_off.json",
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "fixed_determinations": [
+    {
+      "on": false,
+      "constraints": {
+        "attribute": ["a", "b", "c"]
+      }
+    }
+  ],
+  "target_groups": [
+    {
+      "rollout": 100,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}

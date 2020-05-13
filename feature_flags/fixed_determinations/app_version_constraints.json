@@ -1,0 +1,21 @@
+{
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "fixed_determinations": [
+    {
+      "on": true,
+      "constraints": {
+        "app_version": [">=1.2.3", "<=1.3.0"]
+      }
+    }
+  ],
+  "target_groups": [
+    {
+      "rollout": 0,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}
