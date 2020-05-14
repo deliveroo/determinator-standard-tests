@@ -70,8 +70,8 @@
         "guid": "5a5585fb-ac14-4566-b41f-fa6f4531fcdc",
         "properties": {
           "attribute": ["e"]
-        },        
-        "returns": "a"     
+        },
+        "returns": "a" 
       }
     ]
   },{
@@ -222,7 +222,7 @@
     "section": "Fixed determination functionality",
     "examples": [
     {
-        "why": "A actors determination is fixed if a fixed determination's contraints are met by the given properties",
+        "why": "When the actor's properties matches the fixed_determinations contraints the determination is fixed",
         "feature": "feature_flags/fixed_determinations/high_low_spread_constraints.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
@@ -231,7 +231,7 @@
         },
         "returns": true
       },{
-        "why": "A actors determination is fixed if it matches a single fixed determination constraint not necessarily the first",
+        "why": "When the actor's properties matches a single fixed_determinations constraints when there are multiple fixed_determinations constraints the determination is fixed",
         "feature": "feature_flags/fixed_determinations/high_low_spread_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -240,7 +240,7 @@
         },
         "returns": false
       },{
-        "why": "When the actor's properties match two the contraints for multiple fixed determinations, the first fixed determination will be chosen",
+        "why": "When the actor's properties match the contraints for multiple fixed determinations, the first fixed determination will be chosen",
         "feature": "feature_flags/fixed_determinations/high_low_spread_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -249,9 +249,9 @@
             "group_b": ["true"]
         },
         "returns": true
-      },     
+      },
       {
-        "why": "A actors determination is fixed if its properties match the fixed determinations constraints",
+        "why": "When the actor's property exists within the fixed determination constraints array the determination is fixed",
         "feature": "feature_flags/fixed_determinations/array_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -260,7 +260,7 @@
         },
         "returns": true
       },{
-        "why": "A actors determination is not fixed if its properties do not match the fixed determinations constraints",
+        "why": "When the actor's property does not exist within the fixed determination constraints array the determination is not fixed",
         "feature": "feature_flags/fixed_determinations/array_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -269,7 +269,7 @@
         },
         "returns": false
       },{
-        "why": "A actors determination is switched off if it matches the determinations constraints and on is set to false",
+        "why": "When the actors properties matches the fixed_determinations constraints and on is set to false the determination is fixed as being off",
         "feature": "feature_flags/fixed_determinations/feature_switched_off.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -278,7 +278,7 @@
         },
         "returns": false
       },{
-        "why": "When the actor's property array overlaps with the target group containing an app_version the determination is fixed as being on",
+        "why": "When the actor's property array overlaps with the target group containing an app_version the determination is fixed",
         "feature": "feature_flags/fixed_determinations/app_version_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -296,7 +296,7 @@
         },
         "returns": false
       },{
-        "why": "When the actor's property array matches all the constraints in a fixed determination",
+        "why": "When the actor's property array matches all the constraints in a fixed determination the determination is fixed",
         "feature": "feature_flags/fixed_determinations/multiple_constraints.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
@@ -306,7 +306,7 @@
         },
         "returns": true
       },{
-        "why": "When the actor's property array partially matches the constraints in a fixed determination",
+        "why": "When the actor's property array partially matches the constraints in a fixed determination the determination is not fixed",
         "feature": "feature_flags/fixed_determinations/multiple_constraints.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
@@ -401,6 +401,45 @@
             "app_version": ["0.2.0"]
         },
         "returns": false
+      },{
+        "why": "When the actor's property array matches all the constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "attribute_1": ["b"],
+            "attribute_2": ["x"]
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property array partially matches the constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "attribute_1": ["c"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array partially matches the second set of constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "attribute_2": ["x"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array has additional properties but matches all the constraints in a target group",
+        "feature": "feature_flags/target_groups/multiple_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "attribute_1": ["b"],
+          "attribute_2": ["x"],
+          "attribute_3": ["q"]
+        },
+        "returns": true
       }
     ]
   },{
