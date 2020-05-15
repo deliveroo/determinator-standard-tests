@@ -5,7 +5,7 @@
   "bucket_type": "guid",
   "fixed_determinations": [
     {
-      "on": false,
+      "feature_on": false,
       "constraints": {
         "attribute": ["a", "b", "c"]
       }
