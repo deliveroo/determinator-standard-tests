@@ -1,0 +1,23 @@
+{
+  "id": "feature_flags/fixed_determinations/multiple_constraints.json",
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "fixed_determinations": [
+    {
+      "feature_on": true,
+      "constraints": {
+        "attribute_1": ["a", "b", "c"],
+        "attribute_2": ["x"]
+      }
+    }
+  ],
+  "target_groups": [
+    {
+      "rollout": 32768,
+      "constraints": {}
+    }
+  ],
+  "active": true,
+  "overrides": {}
+}

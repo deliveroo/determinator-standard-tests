@@ -1,0 +1,27 @@
+{
+  "id": "experiments/always_assign_to_one_variant.json",
+  "name": "feature_1",
+  "identifier": "feature_1",
+  "bucket_type": "guid",
+  "fixed_determinations": [
+    {
+      "feature_on": true,
+      "variant": "a",
+      "constraints": {
+        "attribute": ["d", "e", "f"]
+      }
+    }
+  ],
+  "target_groups": [
+    {
+      "rollout": 65536,
+      "constraints": {}
+    }
+  ],
+  "variants": {
+    "a": 0,
+    "b": 1
+  },
+  "active": true,
+  "overrides": {}
+}
