@@ -71,7 +71,7 @@
         "properties": {
           "attribute": ["e"]
         },
-        "returns": "a" 
+        "returns": "a"
       }
     ]
   },{
@@ -492,13 +492,6 @@
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
         "properties": {},
         "returns": false
-      },{
-        "why": "Features missing an 'identifier' use the 'name' as the identifier",
-        "feature": "feature_flags/malformed/missing_identifier.json",
-        "id": null,
-        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
-        "properties": {},
-        "returns": true
       },{
         "why": "Features without any target groups are always off",
         "feature": "feature_flags/malformed/no_target_group.json",
