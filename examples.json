@@ -278,7 +278,7 @@
         },
         "returns": false
       },{
-        "why": "When the actor's property array overlaps with the target group containing an app_version the determination is fixed",
+        "why": "When the actor's property array overlaps with the fixed determination containing an app_version the determination is fixed",
         "feature": "feature_flags/fixed_determinations/app_version_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
@@ -287,12 +287,30 @@
         },
         "returns": true
       },{
-        "why": "When the actor's property array does not overlap with the target group containing an app_version the determination is not fixed",
+        "why": "When the actor's property array does not overlap with the fixed determination containing an app_version the determination is not fixed",
         "feature": "feature_flags/fixed_determinations/app_version_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {
             "app_version": ["0.2.0"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array overlaps with the fixed determination containing a request.app_version the determination is fixed",
+        "feature": "feature_flags/fixed_determinations/structured_app_version_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "request.app_version": ["2.3.0", "0.4.0", "1.3.0"]
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property array does not overlap with the fixed determination containing a request.app_version the determination is not fixed",
+        "feature": "feature_flags/fixed_determinations/structured_app_version_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "request.app_version": ["0.2.0"]
         },
         "returns": false
       },{
@@ -395,6 +413,24 @@
       },{
         "why": "When the actor's property array does not overlap with the target group containing an app_version the feature is off",
         "feature": "feature_flags/target_groups/app_version_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "app_version": ["0.2.0"]
+        },
+        "returns": false
+      },{
+        "why": "When the actor's property array overlaps with the target group containing a request.app_version the feature is on",
+        "feature": "feature_flags/target_groups/structured_app_version_constraints.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+            "request.app_version": ["2.3.0", "0.4.0", "1.3.0"]
+        },
+        "returns": true
+      },{
+        "why": "When the actor's property array does not overlap with the target group containing a request.app_version the feature is off",
+        "feature": "feature_flags/target_groups/structured_app_version_constraints.json",
         "id": "54888",
         "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
         "properties": {
