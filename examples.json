@@ -117,7 +117,21 @@
         "guid": null,
         "properties": {},
         "returns": "b"
+      }, {
+        "why": "This experiment results in variant 'autochthonal' for this GUID",
+        "feature": "experiments/100_variants_id.json",
+        "id": "42113",
+        "guid": null,
+        "properties": {},
+        "returns": "autochthonal"
       },{
+        "why": "This experiment results in variant 'azimino' for this GUID",
+        "feature": "experiments/100_variants_id.json",
+        "id": "280239",
+        "guid": null,
+        "properties": {},
+        "returns": "azimino"
+      }, {
         "why": "The rollout of this experiment means this GUID is excluded",
         "feature": "experiments/off_id.json",
         "id": "42113",
