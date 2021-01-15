@@ -575,5 +575,29 @@
         "returns": false
       }
     ]
-  }
+  },{
+  "section": "Non-string variants",
+  "examples": [
+    {
+      "why": "Numeric variant values should be interpreted as strings",
+      "feature": "experiments/non_string_variants.json",
+      "id": "10321",
+      "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+      "properties": {
+        "attribute": ["0"]
+      },
+      "returns": "a"
+    },
+    {
+      "why": "Boolean variant values should be interpreted as strings",
+      "feature": "experiments/non_string_variants.json",
+      "id": "10321",
+      "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
+      "properties": {
+        "attribute": ["true"]
+      },
+      "returns": "a"
+    }
+  ]
+}
 ]
