@@ -574,7 +574,7 @@
         },
         "returns": false
       },{
-        "why": "Features with constraints which are not arrays of strings should be off, but raise an error",
+        "why": "Features with constraints which contain non-strings should be off, but raise an error",
         "feature": "feature_flags/malformed/invalid_constraints_number.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
@@ -582,7 +582,7 @@
         "returns": false,
         "error": true
       },{
-        "why": "Features with constraints which are not arrays of strings should be off, but raise an error",
+        "why": "Features with constraints which are not arrays should be off, but raise an error",
         "feature": "feature_flags/malformed/invalid_constraints_scalar.json",
         "id": "10321",
         "guid": "5b189db0-dc19-4b0f-b06e-68e7ffa2e5b8",
