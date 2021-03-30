@@ -1,5 +1,4 @@
 {
-  "id": "experiments/always_assign_to_one_variant.json",
   "name": "feature_1",
   "identifier": "feature_1",
   "bucket_type": "guid",
@@ -7,13 +6,10 @@
     {
       "rollout": 65536,
       "constraints": {
-        "attribute": [0, true]
+        "foo": [1]
       }
     }
   ],
-  "variants": {
-    "a": 1
-  },
   "active": true,
   "overrides": {}
 }

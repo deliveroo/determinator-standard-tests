@@ -7,12 +7,12 @@
     {
       "feature_on": true,
       "constraints": {
-        "group_a": true
+        "group_a": ["true"]
       }
     },{
       "feature_on": false,
       "constraints":  {
-        "group_b": true
+        "group_b": ["true"]
       }
     }
   ],

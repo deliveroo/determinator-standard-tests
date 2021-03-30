@@ -1,5 +1,4 @@
 {
-  "id": "feature_flags/target_groups/high_low_spread_constraints.json",
   "name": "feature_1",
   "identifier": "feature_1",
   "bucket_type": "guid",
@@ -7,12 +6,7 @@
     {
       "rollout": 65536,
       "constraints": {
-        "group_a": ["true"]
-      }
-    },{
-      "rollout": 1,
-      "constraints":  {
-        "group_b": ["true"]
+        "foo": "bar"
       }
     }
   ],
