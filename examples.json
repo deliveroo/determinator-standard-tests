@@ -15,7 +15,7 @@
         "id": "whatever",
         "guid": null,
         "properties": {},
-        "error": true
+        "returns": false
       }
     ]
   },{
