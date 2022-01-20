@@ -574,6 +574,15 @@
         },
         "returns": false
       },{
+        "why": "Target groups with app_version not compliant with semantic versioning specs are ignored",
+        "feature": "feature_flags/malformed/semver_non_compliance.json",
+        "id": "54888",
+        "guid": "d641e1bb-652c-4bb1-a54f-e18b6c1a9746",
+        "properties": {
+          "app_version": ["1.3.0"]
+        },
+        "returns": false
+      },{
         "why": "Features with constraints which contain non-strings should be off, but raise an error",
         "feature": "feature_flags/malformed/invalid_constraints_number.json",
         "id": "10321",
